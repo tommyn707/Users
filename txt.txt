@@ -1,0 +1,20 @@
+>>> newly_created_user = Users.objects.create(first_name="John",last_name="Smith",email_address="hello@yahoo.com",age=18)
+>>> print(newly_created_user.id)
+1
+>>> newly_created_user = Users.objects.create(first_name="Joe",last_name="Smoth",email_address="hell@yahoo.com",age=28)
+>>> print(newly_created_user.id)                                                2
+>>> newly_created_user = Users.objects.create(first_name="Joll",last_name="Smott",email_address="nell@yahoo.com",age=48)
+>>> print(newly_created_user.id)                                                3
+>>> Users.objects.all()
+<QuerySet [<Users: Users object (1)>, <Users: Users object (2)>, <Users: Users object (3)>]>
+>>>
+>>> first_user = Users.objects.first()
+>>> first_user
+<Users: Users object (1)>
+>>> last_user = Users.objects.last()
+>>> last_user
+<Users: Users object (3)>
+>>> Users_to_updape = Users.objects.get(id=3)
+>>> Users_to_updape.last_name = "Pancakes"
+>>> Users_to_updape.save()
+>>>
